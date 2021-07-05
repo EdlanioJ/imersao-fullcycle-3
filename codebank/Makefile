@@ -1,5 +1,3 @@
-DATABASE="postgresql://postgres:root@db:5432/codebank?sslmode=disable"
-
 start:
 	go run main.go
 
@@ -15,4 +13,7 @@ migrate-up:
 migrate-down:
 	migrate -path infrastructure/db/migration -database ${DATABASE} -verbose down
 
-.PHONY: start build create-migration migrate-up migrate-down
+mock:
+	mockery --output "./domain/mocks" --dir "./" --all
+
+.PHONY: start build create-migration migrate-up migrate-down mock
