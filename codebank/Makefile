@@ -16,4 +16,7 @@ migrate-down:
 mock:
 	mockery --output "./domain/mocks" --dir "./" --all
 
-.PHONY: start build create-migration migrate-up migrate-down mock
+gen:
+	protoc --proto_path=application/grpc application/grpc/protofile/*.proto --go_out=application/ --go-grpc_out=application/
+
+.PHONY: start build create-migration migrate-up migrate-down mock gen
