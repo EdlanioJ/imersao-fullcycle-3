@@ -5,6 +5,6 @@ import (
 	"github.com/codeedu/codebank/dto"
 )
 
-type TransactionUseCase interface {
+type IUseCaseTransaction interface {
 	ProcessTransaction(transactionDto dto.Transaction) (domain.Transaction, error)
 }
