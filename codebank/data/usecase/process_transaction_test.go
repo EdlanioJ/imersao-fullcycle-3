@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
+	"github.com/codeedu/codebank/data/usecase"
 	"github.com/codeedu/codebank/domain"
 	"github.com/codeedu/codebank/domain/mocks"
 	"github.com/codeedu/codebank/dto"
-	"github.com/codeedu/codebank/usecase"
 	uuid "github.com/satori/go.uuid"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
